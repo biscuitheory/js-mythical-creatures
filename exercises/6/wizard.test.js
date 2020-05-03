@@ -39,7 +39,7 @@ describe('Wizard', function() {
     // create wizard
     const wizard = new Wizard({name: 'Harry'})
     // assert wizard.cast() returns 'MAGIC BULLET'
-    assert.equal(wizard.cast('Magic Bullet'), 'MAGIC BULLET')
+    assert.equal(wizard.cast('Magic bullet'), 'MAGIC BULLET')
   });
 
   it('should only be able to cast 3 spells', function() {
@@ -60,6 +60,6 @@ describe('Wizard', function() {
     // assert isRested is false
     assert.equal(wizard.isRested, false)
     // assert cast() returns 'I SHALL NOT CAST!'
-    assert.equal(wizard.cast('I SHALL NOT CAST!'))
+    assert.equal(wizard.cast('I shall not cast!'), 'I SHALL NOT CAST!')
   });
 });

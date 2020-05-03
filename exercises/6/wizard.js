@@ -1,9 +1,9 @@
 class Wizard {
-    constructor({name, bearded = true, isRested = true}){
+    constructor({name, bearded = true, isRested = true, count = 0}){
         this._name = name
         this._bearded = bearded
         this._isRested = isRested
-        this._count = 0
+        this._count = count
     }
 
     incantation(formuleMagique){
@@ -11,7 +11,9 @@ class Wizard {
     }
 
     cast(){
-        if (this._isRested == false){
+        this._count++
+        if (this._count >= 3){
+            this._isRested = false
             return 'I SHALL NOT CAST!'
         }
         return 'MAGIC BULLET'
@@ -26,14 +28,8 @@ class Wizard {
     }
 
     get isRested(){
-        this._count++
-        if (this._count = 3){
-            return this._isRested = false
-        } else {
-        return this._isRested = true
-        }
+        return this._isRested
     }
 
 }
-// const wizard = new Wizard({name: 'Jhun'});
 module.exports = Wizard
