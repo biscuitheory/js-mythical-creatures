@@ -3,7 +3,7 @@ class Wizard {
         this._name = name
         this._bearded = bearded
         this._isRested = isRested
-        this._count = count
+        this._count = count || 0
     }
 
     incantation(formuleMagique){
